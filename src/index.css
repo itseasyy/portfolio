@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter");
+
+@import "tailwindcss";
+
+@utility blob-* {
+    border-radius: 100%;
+    aspect-ratio: 1;
+    background-color: --value(--color-*);
+    filter: blur(200px);
+    opacity: 0.4;
+}
+
+@utility divide {
+    height: 100%;
+    width: 2px;
+}
+
+@utility button {
+    height: 100%;
+    @apply w-45;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    cursor: pointer;
+
+    transition: all 100ms ease-in;
+
+    &:hover {
+        translate: 0px -2px;
+    }
+}
+
+@theme {
+    /* COLORS */
+
+    --color-neon-green: #22FF98;
+    --color-neon-pink: #BA74C0;
+
+    --color-black-100: #101010;
+
+    --background-image-stroke: linear-gradient(175deg, var(--color-neon-green), transparent 40%, transparent 60%, var(--color-neon-pink));
+    
+    --background-image-stroke-bland: linear-gradient(175deg, #fff, transparent 40%, transparent 60%, #fff);
+
+    /* FONTS */
+
+    --font-sans: "Inter", sans-serif;
+}
+
+body {
+    background-color: #000;
+    overflow-x: hidden;
+    @apply scrollbar-thin scrollbar-track-transparent;
+}
