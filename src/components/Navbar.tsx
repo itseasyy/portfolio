@@ -1,6 +1,16 @@
+import { useState } from "react"
 import Logo from "../assets/icon.svg"
-import { motion } from "motion/react"
+import { AnimatePresence, motion } from "motion/react"
+
 function Navbar() {
+  const [menu, showMenu] = useState(false)
+
+  const handleMenu = () => {
+    const toggle = !menu
+
+    showMenu(toggle)
+  }
+
   return (
     <div className="sticky inset-0 bg-mist-950 w-screen min-h-[15vh]
     flex justify-around items-center p-7.5 gap-2.5 text-xl">
@@ -12,13 +22,45 @@ function Navbar() {
         EASY.DEV
       </motion.a>
       <div className="hidden sm:flex gap-2.5">
-        <motion.a whileHover={{translateY: -2}} href="#" className="button">About</motion.a>
-        <motion.a whileHover={{translateY: -2}} href="#" className="button">Works</motion.a>
-        <motion.a whileHover={{translateY: -2}} href="#" className="button">Contact</motion.a>
-        <motion.a whileHover={{translateY: -2}} href="#" className="button">Terms</motion.a></div>
+        <motion.a whileHover={{y: -2}} href="#" className="button">About</motion.a>
+        <motion.a whileHover={{y: -2}} href="#" className="button">Works</motion.a>
+        <motion.a whileHover={{y: -2}} href="#" className="button">Contact</motion.a>
+        <motion.a whileHover={{y: -2}} href="#" className="button">Terms</motion.a>
+      </div>
+
+      <div className="relative flex justify-around gap-1">
         <motion.button className="h-16 aspect-square cursor-pointer rounded-2xl hover:bg-white/25
-        transition-colors duration-100 ease-in">a
-      </motion.button>
+        transition-colors duration-100 ease-in">a</motion.button>
+        <button className="sm:hidden cursor-pointer h-16 aspect-square hover:bg-white/25 rounded-2xl
+        transition-colors duration-100 ease-in"
+        onClick={handleMenu}>☰</button>
+
+        <AnimatePresence>
+          {menu ? <motion.div
+          initial={{
+            y: 10,
+            opacity: 0
+          }}
+          animate={{
+            y: 0,
+            opacity: 1
+          }}
+          exit={{
+            y: 10,
+            opacity: 0
+          }}
+          transition={{
+            duration: 0.1
+          }}
+          className="absolute right-0 bottom-0 translate-y-full bg-mist-950 w-full h-fit
+          flex flex-col p-2.5 rounded-3xl drop-shadow-xl">
+            <motion.a whileHover={{y: -2}} href="#" className="button">About</motion.a>
+            <motion.a whileHover={{y: -2}} href="#" className="button">Works</motion.a>
+            <motion.a whileHover={{y: -2}} href="#" className="button">Contact</motion.a>
+            <motion.a whileHover={{y: -2}} href="#" className="button">Terms</motion.a>
+          </motion.div> : null}
+        </AnimatePresence>
+      </div>
     </div>
   )
 }
