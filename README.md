@@ -1,8 +1,10 @@
 # EASY.DEV | Professional Roblox Scripter
-I'm <b>EasyDev<b>, a <b><i>professional roblox scripter</i></b><br>with 4+ years of scripting with Luau, and other languages!
+I'm **EasyDev**, a ***professional roblox scripter***<br>with 4+ years of scripting with Luau, and other languages!
 
 ## About Me
-I specialize in building <i>useful</i>, <i>complex</i>, and <i>modular</i>, systems.<br>
+Hi, I'm **EasyDev**, a Roblox scripter based in *Egypt*. I'm ***17 years old***, and I've been scripting for **over 4 years now**.
+
+I specialize in building *useful*, *complex*, and *modular*, systems.<br>
 Some of my personal projects are:
 
 - [EasyText](https://github.com/itseasyy) (NEAR RELEASE)
