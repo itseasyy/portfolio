@@ -11,12 +11,14 @@ function Navbar() {
         className="h-full aspect-square" />
         EASY.DEV
       </motion.a>
-      <div className="flex gap-2.5"><motion.a whileHover={{translateY: -2}} href="#" className="button">About</motion.a>
-      <motion.a whileHover={{translateY: -2}} href="#" className="button">Works</motion.a>
-      <motion.a whileHover={{translateY: -2}} href="#" className="button">Contact</motion.a>
-      <motion.a whileHover={{translateY: -2}} href="#" className="button">Terms</motion.a></div>
-      <motion.button className="h-16 aspect-square cursor-pointer rounded-2xl hover:bg-white/25
-      transition-colors duration-100 ease-in">a</motion.button>
+      <div className="hidden sm:flex gap-2.5">
+        <motion.a whileHover={{translateY: -2}} href="#" className="button">About</motion.a>
+        <motion.a whileHover={{translateY: -2}} href="#" className="button">Works</motion.a>
+        <motion.a whileHover={{translateY: -2}} href="#" className="button">Contact</motion.a>
+        <motion.a whileHover={{translateY: -2}} href="#" className="button">Terms</motion.a></div>
+        <motion.button className="h-16 aspect-square cursor-pointer rounded-2xl hover:bg-white/25
+        transition-colors duration-100 ease-in">a
+      </motion.button>
     </div>
   )
 }
