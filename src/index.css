@@ -1,15 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @import "tailwindcss";
 
 @utility button {
-    @apply rounded-2xl hover:bg-indigo-500/25 hover:text-indigo-500 p-3
-      transition-colors duration-100 ease-in;
+    @apply rounded-2xl hover:bg-indigo-500/25 hover:text-indigo-500 focus:bg-indigo-500/25 focus:text-indigo-500 p-3
+      transition-colors duration-100 ease-in
+      outline-none focus:border focus:border-indigo-400;
+}
+
+@utility name-gradient {
+    @apply relative bg-clip-text text-transparent bg-linear-to-br from-indigo-700 via-indigo-400 to-indigo-200;
 }
 
 @theme {
     /* FONTS */
 
     --font-sans: "Ubuntu", sans-serif;
+    --font-antonio: "Antonio", sans-serif;
 }
 
 body {
