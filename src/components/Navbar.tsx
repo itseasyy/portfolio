@@ -1,19 +1,22 @@
 import { useState } from "react"
 import Logo from "../assets/icon.svg"
 import { AnimatePresence, motion } from "motion/react"
+import ScrollManager from "./ScrollManager"
 
 function NavButtons() {
   return (
     <>
-      <motion.a whileHover={{y: -2}} whileFocus={{y: -2}}
-      href="#" className="button"
-      aria-haspopup="true">About</motion.a>
-      <motion.a whileHover={{y: -2}} whileFocus={{y: -2}}
-      href="#" className="button">Works</motion.a>
-      <motion.a whileHover={{y: -2}} whileFocus={{y: -2}}
-      href="#" className="button">Contact</motion.a>
-      <motion.a whileHover={{y: -2}} whileFocus={{y: -2}}
-      href="#" className="button">Terms</motion.a>
+      <ScrollManager>
+        <motion.a whileHover={{y: -2}} whileFocus={{y: -2}}
+        href="#about" className="button"
+        aria-haspopup="true">About</motion.a>
+        <motion.a whileHover={{y: -2}} whileFocus={{y: -2}}
+        href="#works" className="button">Works</motion.a>
+        <motion.a whileHover={{y: -2}} whileFocus={{y: -2}}
+        href="#contact" className="button">Contact</motion.a>
+        <motion.a whileHover={{y: -2}} whileFocus={{y: -2}}
+        href="#terms" className="button">Terms</motion.a>
+      </ScrollManager>
     </>
   )
 }

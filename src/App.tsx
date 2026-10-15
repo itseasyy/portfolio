@@ -190,22 +190,28 @@ function App() {
     <div className="absolute inset-0 z-10 h-25 aspect-square bg-gray-400/25 rounded-full blur-2xl pointer-events-none"
     style={{ left: mouse.x, top: mouse.y, transform: "translate(-50%, -50%)" }} />}
 
+    <div className="absolute bg-indigo-500 rounded-full opacity-50 blur-2xl h-20" />
+
       <div className="flex flex-col h-screen overflow-x-hidden text-gray-500 font-bold
       scrollbar-thin scrollbar-thumb-zinc-700 scrollbar-track-zinc-800">
         <Navbar />
 
         <div id="main" className="flex flex-col bg-zinc-900 h-full">
-          <section id="top" className="h-screen m-10">
+          {/* HERO */}
+
+          <section id="about" className="h-screen m-10 scroll-mt-[calc(15vh+2.5rem)]">
             <div className="flex flex-col h-full w-5/7 sm:max-w-1/2 gap-5">
               {/* HERO TITLE */}
 
               <div className="border-b-2 border-white/25 h-fit pb-5">
                 <h1 className="text-[5rem] sm:text-[10rem] text-white font-antonio">
-                <span className="before:content-[] before:absolute before:inset-0 before:h-full before:w-full before:bg-indigo-500
-                before:blur-xl before:opacity-25
+                <span className="before:content-[] before:absolute before:inset-0 before:aspect-4/3 before:w-full before:bg-indigo-500
+                before:blur-xl before:opacity-50 before:rounded-full before:-translate-1/2 before:left-1/2 before:top-1/2
                 name-gradient pr-px">EASY</span>.DEV</h1>
                 <p className="text-lg">Professional Roblox developer with 4+ years of scripting experience.</p>
               </div>
+
+              {/* DESCRIPTION */}
 
               <div className="relative text-indigo-100 text-2xl sm:text-4xl font-medium">
                 Hey There! I'm <span className="name-gradient font-bold">EasyDev</span>! <Age hovering={hovering} now={now} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} precise={false} /> Roblox
