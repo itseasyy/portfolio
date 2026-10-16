@@ -1,25 +1,51 @@
 import { useEffect, useRef, useState } from "react";
 import Navbar from "./components/Navbar.tsx";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, stagger } from "motion/react";
+import Card from "./components/Card.tsx";
 
 const animationVariants = {
   initial: {
     x: "-50%",
-    y: -5,
+    y: 2,
     opacity: 0
   },
 
   animate: {
     x: "-50%",
-    y: -8,
+    y: -1,
     opacity: 1
   },
 
   exit: {
     x: "-50%",
-    y: -5,
+    y: 2,
     opacity: 0
   },
+}
+
+const topVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      delayChildren: stagger(0.1, { startDelay: 0.1 })
+    }
+  }
+}
+
+const parentVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      delayChildren: stagger(0.1, {
+        startDelay: 1
+      })
+    }
+  }
+}
+
+const basicFloatIn = {
+  hidden: {y: 10, opacity: 0},
+  show: {y: 0, opacity: 1},
 }
 
 const DIGITS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -186,41 +212,81 @@ function App() {
 
   return (
     <>
-    {touch ? null :
-    <div className="absolute inset-0 z-10 h-25 aspect-square bg-gray-400/25 rounded-full blur-2xl pointer-events-none"
-    style={{ left: mouse.x, top: mouse.y, transform: "translate(-50%, -50%)" }} />}
+      <div className="h-screen overflow-clip flex flex-col">
+        {touch &&
+        <div className="absolute inset-0 z-10 h-25 aspect-square bg-gray-400/25 rounded-full blur-2xl pointer-events-none"
+        style={{ left: mouse.x, top: mouse.y, transform: "translate(-50%, -50%)" }} />}
 
-    <div className="absolute bg-indigo-500 rounded-full opacity-50 blur-2xl h-20" />
-
-      <div className="flex flex-col h-screen overflow-x-hidden text-gray-500 font-bold
-      scrollbar-thin scrollbar-thumb-zinc-700 scrollbar-track-zinc-800">
         <Navbar />
 
-        <div id="main" className="flex flex-col bg-zinc-900 h-full">
-          {/* HERO */}
+        <div className="flex flex-col flex-1 min-h-0 bg-zinc-900 overflow-x-clip overflow-y-auto
+          scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-600">
+          
+          {/* HERO SECTION */}
 
-          <section id="about" className="h-screen m-10 scroll-mt-[calc(15vh+2.5rem)]">
-            <div className="flex flex-col h-full w-5/7 sm:max-w-1/2 gap-5">
-              {/* HERO TITLE */}
+          <motion.section
+          variants={topVariants}
+          viewport={{ once: true }}
+          initial="hidden"
+          whileInView="show"
+          id="about" className="h-full shrink-0 p-10">
+            
+            <div className="relative w-3/4 max-w-225 flex flex-col gap-5 h-full">
 
-              <div className="border-b-2 border-white/25 h-fit pb-5">
+              <motion.div
+              variants={basicFloatIn}
+              className="flex-1 sm:flex-3 bottom-separator font-bold">
                 <h1 className="text-[5rem] sm:text-[10rem] text-white font-antonio">
-                <span className="before:content-[] before:absolute before:inset-0 before:aspect-4/3 before:w-full before:bg-indigo-500
-                before:blur-xl before:opacity-50 before:rounded-full before:-translate-1/2 before:left-1/2 before:top-1/2
-                name-gradient pr-px">EASY</span>.DEV</h1>
-                <p className="text-lg">Professional Roblox developer with 4+ years of scripting experience.</p>
-              </div>
+                  <span className="before:content-[] before:absolute before:inset-0 before:aspect-4/3 before:w-full before:bg-indigo-500
+                  before:blur-xl before:opacity-50 before:rounded-full before:-translate-1/2 before:left-1/2 before:top-1/2
+                  name-gradient pr-px">EASY</span>.DEV</h1>
 
-              {/* DESCRIPTION */}
+                <p className="text-lg text-white/50">Professional Roblox developer with 4+ years of scripting experience.</p>
 
-              <div className="relative text-indigo-100 text-2xl sm:text-4xl font-medium">
+              </motion.div>
+
+              <motion.div
+              variants={basicFloatIn}
+              className="relative flex-1 text-indigo-100 text-2xl sm:text-4xl bottom-separator">
                 Hey There! I'm <span className="name-gradient font-bold">EasyDev</span>! <Age hovering={hovering} now={now} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} precise={false} /> Roblox
                 scripter and game developer with <span className="name-gradient font-bold">{experience()}+</span> years of experience!
-              </div>
+              </motion.div>
+
+              <motion.h1 variants={basicFloatIn} className="text-gray-400 italic font-medium text-xl">Some of the things I can offer:</motion.h1>
+              <motion.div
+              className="w-screen
+                flex flex-wrap flex-2 gap-2.5">
+
+                <Card title="Clean, and efficient code.">
+                  I write <b>clean</b>, <b>maintainable</b> code that's easy to understand, debug, and extend, whether working <i>solo</i> or <i>as part of a team</i>.
+                </Card>
+                <Card title="Modular, Scalable, systems.">
+                  I build <b>modular</b>, <b>scalable</b> systems that <i>integrate seamlessly</i> and work out of the box, prioritizing <i>usability</i> and <i>extensibility</i>.
+                </Card>
+                <Card title="Object-Oriented Programming (OOP)">
+                  I apply <b>object-oriented programming (OOP)</b> principles to structure code into reusable classes and objects, improving <i>readability</i>, <i>maintainability</i>, and <i>scalability</i>.
+                </Card>
+                <Card title="Custom Gameplay Systems.">
+                  I build <i>custom gameplay systems</i> from the ground up, including <b>combat</b>, <b>inventory</b>, and <b>progression</b>, tailored to your game.
+                </Card>
+
+              </motion.div>
 
             </div>
-          </section>
-          <div className="h-screen">hi!</div>
+
+          </motion.section>
+
+          <section id="works" className="h-full shrink-0"></section>
+
+          <div className="h-25 border-t-2 mx-2 shrink-0 w-full text-zinc-600 p-5 flex flex-col items-center justify-center">
+            <span>Made with <b>love</b> by a human. Some paragraphs were refined with AI.</span>
+            <div className="flex justify-around w-full">
+              <span>Property of <a href="https://x.com/easydev_rblx" target="_blank" className="hyperlink">@easydev_rblx</a>.</span>
+              <span>Contact via: <a href="https://x.com/easydev_rblx" target="_blank" className="hyperlink">Twitter</a>
+              , <a href="https://discord.com/users/702157796023468193" target="_blank" className="hyperlink">Discord</a>
+              , or <a href="mailto:easydev.work@gmail.com" target="_blank" className="hyperlink">Email</a></span>
+            </div>
+          </div>
         </div>
       </div>
     </>

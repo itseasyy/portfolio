@@ -1,22 +1,19 @@
 import { useState } from "react"
 import Logo from "../assets/icon.svg"
 import { AnimatePresence, motion } from "motion/react"
-import ScrollManager from "./ScrollManager"
 
 function NavButtons() {
   return (
     <>
-      <ScrollManager>
-        <motion.a whileHover={{y: -2}} whileFocus={{y: -2}}
-        href="#about" className="button"
-        aria-haspopup="true">About</motion.a>
-        <motion.a whileHover={{y: -2}} whileFocus={{y: -2}}
-        href="#works" className="button">Works</motion.a>
-        <motion.a whileHover={{y: -2}} whileFocus={{y: -2}}
-        href="#contact" className="button">Contact</motion.a>
-        <motion.a whileHover={{y: -2}} whileFocus={{y: -2}}
-        href="#terms" className="button">Terms</motion.a>
-      </ScrollManager>
+      <motion.a whileHover={{y: -2}} whileFocus={{y: -2}}
+      href="#about" className="button"
+      aria-haspopup="true">About</motion.a>
+      <motion.a whileHover={{y: -2}} whileFocus={{y: -2}}
+      href="#works" className="button">Works</motion.a>
+      <motion.a whileHover={{y: -2}} whileFocus={{y: -2}}
+      href="#contact" className="button">Contact</motion.a>
+      <motion.a whileHover={{y: -2}} whileFocus={{y: -2}}
+      href="#terms" className="button">Terms</motion.a>
     </>
   )
 }
@@ -31,8 +28,8 @@ function Navbar() {
   }
 
   return (
-    <div className="z-2700 sticky inset-0 bg-mist-950 w-screen min-h-[15vh]
-    flex justify-around items-center p-7.5 gap-2.5 text-xl">
+    <div className="z-2700 sticky inset-0 bg-mist-950 w-screen min-h-[10vh]
+    flex justify-around items-center p-7.5 gap-2.5 text-gray-400 font-bold text-xl">
       <motion.a
       tabIndex={-1}
       whileHover={{ scale: 1.1, rotate: -5 }}

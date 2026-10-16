@@ -11,6 +11,14 @@
     @apply relative bg-clip-text text-transparent bg-linear-to-br from-indigo-700 via-indigo-400 to-indigo-200;
 }
 
+@utility bottom-separator {
+    @apply border-b-2 border-white/25 pb-5;
+}
+
+@utility hyperlink {
+    @apply underline text-zinc-400;
+}
+
 @theme {
     /* FONTS */
 
@@ -19,6 +27,5 @@
 }
 
 body {
-    scroll-behavior: smooth;
-    overflow: hidden;
+    overflow-x: hidden;
 }
