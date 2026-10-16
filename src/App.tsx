@@ -32,16 +32,16 @@ const topVariants = {
   }
 }
 
-const parentVariants = {
-  hidden: {},
-  show: {
-    transition: {
-      delayChildren: stagger(0.1, {
-        startDelay: 1
-      })
-    }
-  }
-}
+// const parentVariants = {
+//   hidden: {},
+//   show: {
+//     transition: {
+//       delayChildren: stagger(0.1, {
+//         startDelay: 1
+//       })
+//     }
+//   }
+// }
 
 const basicFloatIn = {
   hidden: {y: 10, opacity: 0},
