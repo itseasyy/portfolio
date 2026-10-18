@@ -1,14 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @import "tailwindcss";
 
+
 @utility button {
-    @apply rounded-2xl hover:bg-indigo-500/25 hover:text-indigo-500 focus:bg-indigo-500/25 focus:text-indigo-500 p-3
-      transition-colors duration-100 ease-in
-      outline-none focus:border focus:border-indigo-400;
+    @apply text-white/50 h-fit w-fit px-5 py-2 rounded-full hover:bg-gray-600/25 hover:ring-1 hover:ring-inset hover:ring-gray-600;
 }
 
 @utility name-gradient {
-    @apply relative bg-clip-text text-transparent bg-linear-to-br from-indigo-700 via-indigo-400 to-indigo-200;
+    @apply w-fit px-0.5 bg-clip-text text-transparent bg-linear-to-br from-indigo-700 via-indigo-400 to-indigo-200;
 }
 
 @utility bottom-separator {
@@ -24,8 +23,36 @@
 
     --font-sans: "Ubuntu", sans-serif;
     --font-antonio: "Antonio", sans-serif;
+    --font-roboto: "Roboto", sans-serif;
+
+    --background-image-gradient: linear-gradient(45deg, var(--color-indigo-950), var(--color-indigo-600));
+    --background-image-grid: radial-gradient(circle, #f3eeee 1px, #0000 1px);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 2px solid var(--color-ink);
+    background: #ffffff24;
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff38;
+}
+
+::-webkit-scrollbar-track {
+    background: 0 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
 }
 
 body {
-    overflow-x: hidden;
+    background-color: black;
 }
