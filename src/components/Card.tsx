@@ -17,7 +17,7 @@ function Card({ title, children }: CardProps) {
     id="card" className="before:content-[] before:h-full before:w-full before:bg-linear-to-r
     before:from-indigo-400 before:via-black before:to-transparent
     before:blur-md before:opacity-50 before:absolute before:inset-0 before:rounded-2xl
-    relative shrink-0 sm:h-full h-55 w-100 bg-indigo-800 rounded-2xl text-white p-5 select-none">
+    relative h-full flex-1 bg-indigo-800 rounded-2xl text-white p-5 select-none text-[clamp(1rem,1cqi,4rem)]">
       <motion.div
       whileHover={{
         x: 2
