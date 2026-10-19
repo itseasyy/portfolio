@@ -1,6 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, stagger } from "motion/react";
-import Card from "./components/Card.tsx";
+import { motion, stagger } from "motion/react";
 import Navbar from "./components/Navbar.tsx";
 import LetsWork from "./components/LetsWork.tsx";
 
