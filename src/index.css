@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Antonio:wght@100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @import "tailwindcss";
 
 
 @utility button {
-    @apply text-white/50 h-fit w-fit px-5 py-2 rounded-full hover:bg-gray-600/25 hover:ring-1 hover:ring-inset hover:ring-gray-600;
+    @apply text-white/50 h-fit w-fit px-5 py-2 rounded-2xl hover:bg-gray-600/25 hover:ring-1 hover:ring-inset hover:ring-gray-600;
 }
 
 @utility name-gradient {
@@ -18,19 +18,50 @@
     @apply underline text-zinc-400;
 }
 
+@utility halftone {
+    background-image: radial-gradient(circle, #f3eeee 1px, #0000 1px);
+    background-size: 40px 40px;
+    opacity: 0.25;
+
+    mask-image: radial-gradient(ellipse at top,black 20%,transparent 75%),
+                linear-gradient(to bottom, transparent 5%, black 15%);
+
+    mask-composite: intersect;
+}
+
+@utility section {
+    @apply h-full min-h-[92vh] scroll-m-[8vh] px-5 py-3;
+}
+
+@utility blob-* {
+    border-radius: 100%;
+    background-color: --value(--color-*);
+    filter: blur(100px);
+    z-index: -2;
+}
+
+@utility glow-* {
+  @apply relative isolate before:content-[''] before:absolute before:inset-0 before:blur-xl before:-z-10;
+
+  &::before {
+    background: --value(--color-*, --background-image-*);
+  }
+}
+
 @theme {
     /* FONTS */
 
     --font-sans: "Ubuntu", sans-serif;
     --font-antonio: "Antonio", sans-serif;
     --font-roboto: "Roboto", sans-serif;
+    --font-inter: "Inter", sans-serif;
 
-    --background-image-gradient: linear-gradient(45deg, var(--color-indigo-950), var(--color-indigo-600));
-    --background-image-grid: radial-gradient(circle, #f3eeee 1px, #0000 1px);
+    --color-running: #34d399;
+    --background-image-gradient: linear-gradient(45deg, var(--color-indigo-800), var(--color-indigo-600));
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
     height: 10px;
 }
 
@@ -54,5 +85,5 @@ html {
 }
 
 body {
-    background-color: black;
+    background-color: #05060b;
 }
