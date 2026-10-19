@@ -31,7 +31,7 @@
 }
 
 @utility section {
-    @apply h-full min-h-[92vh] scroll-m-[8vh] px-5 py-3;
+    @apply h-full min-h-[92lvh] scroll-m-[8lvh] px-5 py-3;
 }
 
 @utility blob-* {

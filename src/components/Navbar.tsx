@@ -45,7 +45,7 @@ function Navbar() {
   }, [scrolled])
 
   return (
-    <div className="sticky inset-0 w-full h-[8vh]
+    <div className="sticky inset-0 w-full h-[8lvh]
     flex p-5 justify-around items-center select-none text-white
     transition-all duration-200 ease-in z-10"
     style={scrolled ? {borderBottom: "2px solid #ffffff80", backgroundColor: "#05060b50", backdropFilter: "blur(24px)"} : {borderBottom: "2px solid transparent", backdropFilter: "blur(0px)"}}>
@@ -53,7 +53,7 @@ function Navbar() {
       href="#top"
       whileHover={{scale: 1.1, rotate: -5}}
       className="flex items-center justify-around gap-1 h-full p-1.25 w-fit cursor-pointer" aria-hidden="true">
-        <img src={Logo} alt="logo" className="h-full aspect-square" />
+        <img src={Logo} alt="logo" className="h-full min-h-10.5 aspect-square" />
         <span className="text-xl font-bold"><span className="name-gradient">EASY</span>.DEV</span>
       </motion.a>
 
@@ -86,7 +86,7 @@ function Navbar() {
         animate={{y: 0, opacity: 1}}
         exit={{y: 2, opacity: 0}}
         className="flex flex-col absolute right-0 bottom-0 translate-y-full -translate-x-1/2 h-fit
-        bg-[#05060b80] backdrop-blur-3xl gap-2
+        bg-[#05060b80] backdrop-blur-3xl gap-2 z-99
         rounded-2xl border border-white/25 p-5">
           <NavButtons />
         </motion.div>}

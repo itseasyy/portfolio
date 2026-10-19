@@ -51,16 +51,16 @@ function App() {
           {/* HERO */}
 
           <div className="@container flex flex-col justify-center items-center
-          h-[50vh] w-[50vh] absolute top-1/2 left-1/2 -translate-1/2 px-5 py-3">
+          h-[50svh] w-[50svh] absolute top-1/2 left-1/2 -translate-1/2 px-5 py-3">
 
             <motion.div
             variants={basicFloatIn}
-            className="flex justify-center items-center gap-2.5 text-md font-inter text-white/80 rounded-full bg-gray-700/25 border border-gray-700 px-5 py-1">
+            className="flex justify-center items-center gap-2.5 text-sm font-inter text-white/80 rounded-full bg-gray-700/25 border border-gray-700 px-5 py-1">
               <span className="size-1.5 bg-running rounded-full" />Advanced scripter · avaliable for work
             </motion.div>
             <motion.h1 variants={basicFloatIn} className="text-[clamp(5rem,10cqi,10rem)] font-bold"><span className="glow-gradient before:rounded-full before:opacity-50 name-gradient">Easy</span>Dev</motion.h1>
             <motion.p variants={basicFloatIn}
-            className="text-white/80 text-lg w-full font-medium text-center">Professional Roblox scripter with <span className="name-gradient font-bold">4+</span> of experience in <b>Luau</b>, based in <span className="name-gradient font-bold">Egypt</span>. I specialize in <b>system development</b>, and <b>game logic</b>. I'm looking to apply my skills to new projects and collaborate with other developers to bring games to life.</motion.p>
+            className="text-white/80 text-sm sm:text-lg w-full font-medium text-center">Professional Roblox scripter with <span className="name-gradient font-bold">4+</span> of experience in <b>Luau</b>, based in <span className="name-gradient font-bold">Egypt</span>. I specialize in <b>system development</b>, and <b>game logic</b>. I'm looking to apply my skills to new projects and collaborate with other developers to bring games to life.</motion.p>
             <div className="flex h-20 justify-center gap-2.5 items-center w-full py-3">
               <motion.div variants={basicFloatIn} className="h-full w-fit"><LetsWork /></motion.div>
               <motion.a
