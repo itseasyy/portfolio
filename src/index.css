@@ -3,7 +3,8 @@
 
 
 @utility button {
-    @apply text-white/50 h-fit w-fit px-5 py-2 rounded-2xl hover:bg-gray-600/25 hover:ring-1 hover:ring-inset hover:ring-gray-600;
+    @apply text-white/50 h-fit w-fit px-5 py-2 rounded-2xl transition-colors duration-100 ease-in
+    hover:text-white/80 hover:bg-gray-600/25 hover:ring-1 hover:ring-inset hover:ring-gray-600;
 }
 
 @utility name-gradient {
