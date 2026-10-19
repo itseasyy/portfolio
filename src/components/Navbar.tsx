@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import Logo from "../assets/icon.svg"
 import { AnimatePresence, motion } from "motion/react"
 import LetsWork from "./LetsWork"
@@ -61,7 +61,7 @@ function Navbar() {
         <NavButtons />
       </div>
 
-      <div className="hidden sm:block"><LetsWork /></div>
+      <div className="hidden sm:block h-full"><LetsWork /></div>
 
       <motion.div
       whileHover={{scale: 1.05}}
