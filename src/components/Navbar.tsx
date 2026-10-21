@@ -45,7 +45,7 @@ function Navbar() {
   }, [scrolled])
 
   return (
-    <div className="sticky inset-0 w-full h-[8lvh]
+    <div className="sticky inset-0 w-full min-h-26 h-[8lvh]
     flex p-5 justify-around items-center select-none text-white
     transition-all duration-200 ease-in z-10"
     style={scrolled ? {borderBottom: "2px solid #ffffff80", backgroundColor: "#05060b50", backdropFilter: "blur(24px)"} : {borderBottom: "2px solid transparent", backdropFilter: "blur(0px)"}}>

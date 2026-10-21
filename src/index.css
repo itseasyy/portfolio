@@ -30,8 +30,19 @@
     mask-composite: intersect;
 }
 
+@utility halftone-variant {
+    background-image: radial-gradient(circle, #f3eeee 1px, #0000 1px);
+    background-size: 30px 30px;
+    opacity: 0.25;
+
+    mask-image: radial-gradient(circle at left,black 20%,transparent 60%),
+                linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+
+    mask-composite: intersect;
+}
+
 @utility section {
-    @apply h-full min-h-[92lvh] scroll-m-[8lvh] px-5 py-3;
+    @apply h-fit min-h-[92lvh] scroll-m-[8lvh] px-5 py-3 font-inter;
 }
 
 @utility blob-* {
@@ -59,6 +70,8 @@
 
     --color-running: #34d399;
     --background-image-gradient: linear-gradient(45deg, var(--color-indigo-800), var(--color-indigo-600));
+
+    --text-paragraph: clamp(1rem, 4cqi, 2rem);
 }
 
 ::-webkit-scrollbar {
